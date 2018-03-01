@@ -69,8 +69,11 @@ void fetchlinks(index_page &b)
 		{
 			if(!start)
 			{
-				if(line[i]=='"' && line[i+1]=='h' && line[i+2]=='t' && line[i+3]=='t' && line[i+4]=='p')
-				start=i;
+				if(line[i]=='h' && line[i+1]=='r' && line[i+2]=='e' && line[i+3]=='f' && line[i+4]=='=')
+				{
+					i+=5;
+					start=i;
+				}
 			}
 			else if(start && line[i]=='"')
 			{
